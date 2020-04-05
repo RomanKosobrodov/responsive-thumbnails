@@ -1,0 +1,89 @@
+:root {
+  --item-width: 25vw;
+  --image-container-height: calc(var(--item-width) * 3 / 4);
+  --image-height: calc(var(--image-container-height) * 5 / 6);
+  --image-margin: calc(var(--image-container-height) * 1 / 12);
+  --image-title-height: calc(var(--image-container-height) * 1 / 4);
+  --item-width2: 39vw;
+  --item-width1: 78vw;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: rgb(202, 211, 208);
+}
+
+.container {
+  background-color: rgb(169, 170, 173);
+  padding: 1vw;
+  width: 80vw;
+  margin-left: 10vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item {
+  width: var(--item-width);
+  margin-bottom: 1vw;
+  text-align: center;
+}
+
+.image-container {
+  width: 100%;
+  height: var(--image-container-height);
+  background-color: lightgray;
+}
+
+.image-container img {
+  max-height: var(--image-height);
+  max-width: calc(var(--item-width) - calc(var(--image-margin) * 2));
+  width: auto;
+  height: auto;
+  margin: var(--image-margin);
+}
+
+.image-title {
+  width: 100%;
+  height: var(--image-title-height);
+  background-color: white;
+}
+
+.image-title p {
+  margin: 0;
+  padding-top: calc(var(--image-title-height) * 1 / 4);
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  :root {
+    --item-width: var(--item-width2);
+    --image-container-height: calc(var(--item-width) * 3 / 4);
+    --image-height: calc(var(--image-container-height) * 5 / 6);
+    --image-margin: calc(var(--image-container-height) * 1 / 12);
+    --image-title-height: calc(var(--image-container-height) * 1 / 4);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .image-title p {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --item-width: var(--item-width1);
+    --image-container-height: calc(var(--item-width) * 3 / 4);
+    --image-height: calc(var(--image-container-height) * 5 / 6);
+    --image-margin: calc(var(--image-container-height) * 1 / 12);
+    --image-title-height: calc(var(--image-container-height) * 1 / 4);
+  }
+  .item {
+    margin-bottom: 2vw;
+  }
+  .image-title p {
+    font-size: 1rem;
+  }
+}
