@@ -11,10 +11,12 @@ See the example [live](http://responsive-thumbnails.kosobrodov.net).
 There are a few simple tricks in the code. To fit an image of unknown aspect ratio into a fixed box with ratio 2/3 use the following:
 
 ```css
-max-width: var(--image-width);
-max-height: calc(var(--image-width) * 2 / 3);
-width: auto;
-height: auto;
+img {
+  max-width: var(--image-width);
+  max-height: calc(var(--image-width) * 2 / 3);
+  width: auto;
+  height: auto;
+}
 ```
 
 Another technique that I find useful is the `calc` function combined with CSS variables as shown in the example code above.
